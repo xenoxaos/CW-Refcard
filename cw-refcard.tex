@@ -1,0 +1,337 @@
+% CW QSO Refcard
+%
+% Copyright (c) 2015 Tom, DL7BJ
+%
+%
+\documentclass[10pt]{article}
+\usepackage{fixltx2e}
+\usepackage[orthodox,l2tabu,abort]{nag}
+\usepackage{amssymb}
+\usepackage[11pt]{moresize}
+% Page layout
+\usepackage[landscape,margin=0.5in]{geometry}
+\usepackage{multicol}
+
+% Title area
+% Allows for use of date, author, etc. after \maketitle
+\usepackage{titling} 
+\let\oldtitle\title
+\renewcommand{\title}[1]{\oldtitle{#1}\newcommand{\mythetitle}{#1}}
+\renewcommand{\maketitle}{%
+{\begin{center}\Large \mythetitle\end{center}}
+
+}
+
+\usepackage[scale=1.25]{ccicons}
+
+%% PDF Meta Information und Links
+\usepackage[
+colorlinks=true,urlcolor=blue,linkcolor=black,
+pdftitle={CW QSO Cheat Sheet},
+pdfsubject={CW QSO Cheat Sheet},
+pdfauthor={Thomas 'Tom' Malkus, DL7BJ},
+pdfkeywords={Ham Radio, CW},
+pdfcreator={TeX Maker 3.4 (Linux, Windows 10)},
+pdfproducer={LaTeX}]
+{hyperref}
+
+% Document divisions
+\usepackage{titlesec}
+\setcounter{secnumdepth}{0}
+\titlespacing{\section}{0pt}{5pt}{0pt}
+\titlespacing{\subsection}{0pt}{5pt}{0pt}
+\usepackage{nopageno} % To keep \section from resetting page style
+
+\setlength{\parindent}{0pt} % disabling indentation by default
+
+% Lists
+\usepackage{enumitem} % for consistent formatting of lists
+\newlist{ttdesc}{description}{1}
+\setlist[ttdesc]{font=\ttfamily,noitemsep}
+\usepackage{calc} % for \widthof
+
+% Code
+\usepackage{listings}
+\lstset{language=[LaTeX]TeX,%
+  basicstyle=\itshape,%
+  keywordstyle=\normalfont\ttfamily,%
+  morekeywords={part,chapter,subsection,subsubsection,paragraph,subparagraph}%
+  }
+
+\usepackage{lipsum}
+
+\title{CW QSO Cheat Sheet}
+\author{Tom, DL7BJ}
+\date{2015}
+
+\begin{document}
+
+\begin{multicols}{3}
+\maketitle
+
+\section{Standard QSO}
+\vspace{\baselineskip}
+
+Replace the placeholders with\\
+\begin{tabular}{lll}
+\textit{mycall} & = Your Callsign & \textit{(\hspace{3cm})}\\
+\textit{myrig} & = Your rig & \textit{(\hspace{3cm})}\\
+\textit{myant} & = Your antenna & \textit{(\hspace{3cm})}\\
+\textit{myqth} & = Your QTH & \textit{(\hspace{3cm})}\\
+\textit{RST} & = Send rst & \textit{something like 599}\\
+\textit{mypwr} & = Your TX Power & \textit{something like 5W}\\
+\textit{mytemp} & = Outdoor temp & \textit{something like 12C}\\
+\end{tabular}
+\vspace{\baselineskip}
+
+
+\subsection{Calling CQ}
+\vspace{\baselineskip}
+Find a frequency that seems to be clear.\\
+Listen! If you don't hear anything send QRL?\\ 
+Listen again and send again QRL?\\
+\textbf{If you don't hear anything call CQ}\\
+cq cq cq de \textit{mycall} \textit{mycall} \textit{mycall} pse k\\ 
+\textbf{A OP answers - Your first turn}\\
+\textit{call} de \textit{mycall} $\overline{BT}$\\ gd dr op es tnx fer call $\overline{BT}$\\ ur rst \textit{RST} \textit{RST} \textit{fb $\veebar$ qrm $\veebar$ qsb} $\overline{BT}$\\ name \textit{myname} \textit{myname} QTH \textit{myqth} \textit{myqth} $\overline{BT}$\\ hw?\\ \textit{call} de \textit{mycall} $\overline{KN}$\\
+\textbf{Now the OP is sending, make notes!}\\
+\textbf{Your second turn}\\
+\textit{call} de \textit{mycall} $\overline{BT}$\\ 
+ok dr frd es vy tnx fr ur info $\overline{BT}$\\ 
+hr rig \textit{myrig} pwr \textit{mypwr}W $\overline{BT}$\\
+ant \textit{dipole $\veebar$ vertical $\veebar$ zepp} $\overline{BT}$\\
+wx \textit{sunny $\veebar$ cloudy $\veebar$ rain} temp \textit{mytemp} C $\overline{BT}$\\
+nw QRU $\overline{BT}$\\
+pse ur qsl via bureau $\overline{BT}$\\
+tnx fr qso es hpe cuagn 73 es gb\\
+\textit{call} de \textit{mycall} $\overline{SK}$\\
+\vspace{\baselineskip}
+\subsection{Answering a CQ}
+\vspace{\baselineskip}
+\textbf{Your turn after a station called CQ}\\
+\textit{call} de {mycall} $\overline{AR}$\\
+The OP give you some information, make notes! 
+Your first turn:\\
+\textit{call} de \textit{mycall} $\overline{BT}$\\
+fb gd dr op es tnx fr rprt $\overline{BT}$\\
+ur rst \textit{RST} \textit{RST} \textit{fb $\veebar$ qrm $\veebar$ qsb} $\overline{BT}$\\
+name \textit{myname} \textit{myname} QTH \textit{myqth} \textit{myqth} $\overline{BT}$\\
+rig \textit{myrig} pwr \textit{mypwr}W es ant \textit{dipole $\veebar$ vertical $\veebar$ zepp} $\overline{BT}$\\
+wx \textit{sunny $\veebar$ cloudy $\veebar$ rain} temp \textit{mytemp} C $\overline{BT}$\\
+hpe ok?\\
+\textit{call} de \textit{mycall} $\overline{KN}$\\
+\textbf{Time to say good bye}\\
+\textit{call} de {mycall} $\overline{BT}$\\
+all ok dr op = QSL via bureau ok $\overline{BT}$\\
+tnx fr QSO 73 es best dx dr op es hpe cuagn $\overline{BT}$\\
+\textit{call} de \textit{mycall} $\overline{SK}$\\
+
+\section{Common abbreviations}
+\vspace{\baselineskip}
+\begin{tabular}{lllll}
+agn & again    & & ant & antenna\\
+bk & break in  & & buro & bureau\\
+b4 & before    & & c & yes, correct\\
+cl & closing   & & condx & conditions\\
+cpi & copy     & & cu & see you\\
+dr & dear      & & es & and \\
+fer & for      & & gd & good day\\
+hpe & hope     & & hr & here\\
+pse & please   & & rprt & report\\
+rpt & repeat   & & sri & sorry\\
+tnx & thanks   & & tu & thank you\\
+ur & your      & & vy & very\\ 
+wx & weather   & & 73 & best regards\\
+\end{tabular}
+
+
+\section{Common prosigns}
+\vspace{\baselineskip}
+\begin{tabular}{ll}
+$\overline{AR}$ & End of transmission\\
+$\overline{AS}$ & Wait, stand by for a short time\\
+$\overline{BT}$ & Separation between topics in QSO\\
+$\overline{IMI}$ & Repeat of difficult words\\
+$\overline{SK}$ & End of Work\\
+\end{tabular}
+
+\section{Common procedural prosigns}
+\vspace{\baselineskip}
+\begin{tabular}{ll}
+DE & Used as 'From'\\
+ES & \& or and\\
+K & Turning over\\
+BK & Back to you\\
+CL & Closing station\\
+R & All received and understood\\
+$\overline{KN}$ & Turning over to a specific station\\
+\end{tabular}
+\section{Common Q Signals}
+\vspace{\baselineskip}
+Every Q Signal can be asked or answered. Only the meaning of the basic Q Signals are listed.
+\begin{tabular}{ll}
+QRG & Frequency\\
+QRL & Busy, also frequency in use\\
+QRM & Interferences from another station\\
+QRN & Interference from static\\
+QSB & Fading\\
+QRO & Increase power\\
+QRP & Decrease power\\
+QRQ & Send faster\\
+QRS & Send slower\\
+QRT & Stop sending\\
+QRU & All done, nothing more\\
+QRV & Are you ready or I am ready\\
+QRZ & Who is calling me?\\
+QSL & Acknowledge receipt\\
+QSX & Listen on \textit{frequency}\\
+QSY & Change frequency\\
+QTH & Location\\
+QTR & Time\\
+\end{tabular}
+
+
+\vspace{1cm}
+\noindent \thedate{} \theauthor{} \href{http://dl7bj.org}{http://dl7bj.org} \\
+Version 1.4 \href{http://git.dl7bj.org/Documents}{Download latest version}\\
+\ccbyncsa \hspace{0.5cm} \href{http://creativecommons.org/licenses/by-nc-sa/4.0}{Creative Commons License} \\
+
+\newpage
+
+The activity centres for QRS, QRP, FISTS and SKCC are the best frequencies for beginners.
+On these frequencies you should find QSO partners for slow \& accurate CW QSO's.
+
+\section{QRP activity centres}
+\vspace{\baselineskip}
+\begin{tabular}{rr}
+Band & MHz\\ \hline 
+160m & 1.836\\
+ 80m & 3.560\\
+ 40m & 7.030\\
+ 30m & 10.106\\
+ 30m & 10.116\\
+ 20m & 14.060\\
+ 17m & 18.086\\
+ 17m & 18.096\\
+ 15m & 21.060\\
+ 12m & 24.906\\
+ 10m & 28.060\\
+     &       \\
+\end{tabular}
+
+\subsection{QRP-Clubs}
+\href{http://www.dl-qrp-ag.de}{DL-QRP-AG (Germany)}\\
+\href{http://www.gqrp.com}{G-QRP Club (UK)}\\
+\href{http://www.g-qrp-dl.de}{G-QRP Club (Germany)}\\
+\href{http://www.qrparci.org}{QRP ARCI (International)}\\
+
+\section{FISTS activity centres}
+\vspace{\baselineskip}
+\begin{tabular}{rrrr}
+Band & MHz & diff. US & diff. Asia \\ \hline 
+160m & 1.818 & 1.808 & \\ 
+ 80m & 3.558 &  &\\ 
+ 40m & 7.028 & 7.058 & 7.026 \& 7.058 \\
+ 30m & 10.118 & & 10.118 \& 10.138 \\ 
+ 20m & 14.058 & & \\ 
+ 17m & 18.085 & & \\ 
+ 15m & 21.058 & & 21.058 \& 21.138 \\ 
+ 12m & 24.918 & & \\ 
+ 10m & 28.058 & & 28.058 \& 28.158 \\
+     &        & & \\     
+\end{tabular}
+
+\href{https://fists.co.uk}{FISTS CW Club} supports the use, preservation and education of Morse code. \href{http://fistsna.org}{FISTS North America} and \href{http://www.feacw.net}{FISTS Asia} have different activity centres on selected bands, also VK \& ZL on 160m at 1.808 MHz. \\
+
+\section{SKCC activity centres}
+\vspace{\baselineskip}
+\begin{tabular}{rr}
+Band & MHz\\ \hline 
+160m & 1.820\\
+ 80m & 3.550\\
+ 40m & 7.055\\
+ 30m & 10.120\\
+ 20m & 14.050\\
+ 17m & 18.080\\
+ 15m & 21.050\\
+ 12m & 24.910\\
+ 10m & 28.050\\
+  6m & 50.090\\
+     &       \\
+\end{tabular}
+
+SKCC members who use bugs are encouraged to make higher speed calls 2 kHz above the calling frequencies.\\ 
+
+SKCC members who prefer QRS (sending slowly) are encouraged to make calls 2 kHz down from the calling frequencies.
+
+\section{QRS activity centres}
+\vspace{\baselineskip}
+\begin{tabular}{rr}
+Band & MHz\\ \hline 
+ 80m & 3.555\\
+ 20m & 14.055\\
+ 15m & 21.055\\
+ 10m & 28.055\\
+\end{tabular}
+\vspace{\baselineskip}
+
+Every Tuesday at 19:30 LT (17:30 UTC at CEST, 18:30 UTC at CET) you can hear the QRS Net on 3.556 MHz $\pm$QRM. 
+
+\section{International Beacons}
+
+\begin{tabular}{rr}
+Band & MHz \\ \hline 
+ 20m & 14.099 - 14.101 \\ 
+ 17m & 18.109 - 18.111 \\ 
+ 15m & 21.149 - 21.151 \\ 
+ 12m & 24.929 - 24.931 \\ 
+ 10m & 28.190 - 28.225 \\
+     &       \\     
+\end{tabular}
+
+\section{NCDXF/IARU Beacon Network}
+\vspace{\baselineskip}
+Each beacon transmits every three minutes, day and night. This table gives the minute and second of the start of the first transmission within the hour for each beacon on each frequency. A transmission consists of the callsign of the beacon sent at 22 words per minute followed by four one-second dashes. The callsign and the first dash are sent at 100 watts. The remaining dashes are sent at 10 watts, 1 watt and 100 milliwatts.\\
+\\
+\begin{tabular}{cccccc}
+Callsign & 14.100 & 18.110 & 21.150 & 24.930 & 28.200 \\ \hline 
+4U1UN    & 00:00 & 00:10 & 00:20 & 00:30 & 00:40 \\
+VE8AT 	 & 00:10 & 00:20 & 00:30 & 00:40 & 00:50 \\
+W6WX 	 & 00:20 & 00:30 & 00:40 & 00:50 & 01:00 \\
+KH6WO 	 & 00:30 & 00:40 & 00:50 & 01:00 & 01:10 \\
+ZL6B 	 & 00:40 & 00:50 & 01:00 & 01:10 & 01:20 \\
+VK6RBP 	 & 00:50 & 01:00 & 01:10 & 01:20 & 01:30 \\
+JA2IGY 	 & 01:00 & 01:10 & 01:20 & 01:30 & 01:40 \\
+RR9O 	 & 01:10 & 01:20 & 01:30 & 01:40 & 01:50 \\
+VR2B 	 & 01:20 & 01:30 & 01:40 & 01:50 & 02:00 \\
+4S7B 	 & 01:30 & 01:40 & 01:50 & 02:00 & 02:10 \\
+ZS6DN 	 & 01:40 & 01:50 & 02:00 & 02:10 & 02:20 \\
+5Z4B 	 & 01:50 & 02:00 & 02:10 & 02:20 & 02:30 \\
+4X6TU 	 & 02:00 & 02:10 & 02:20 & 02:30 & 02:40 \\
+OH2B 	 & 02:10 & 02:20 & 02:30 & 02:40 & 02:50 \\
+CS3B 	 & 02:20 & 02:30 & 02:40 & 02:50 & 00:00 \\
+LU4AA 	 & 02:30 & 02:40 & 02:50 & 00:00 & 00:10 \\
+OA4B 	 & 02:40 & 02:50 & 00:00 & 00:10 & 00:20 \\
+YV5B 	 & 02:50 & 00:00 & 00:10 & 00:20 & 00:30 \\
+         &       &       &       &       &       \\    
+\end{tabular}
+\href{http://www.ncdxf.org/beacon/intro.html}{NCDXF/IARU Beacon Network}
+
+\section{ARRL CW Code Practice}
+\vspace{\baselineskip}
+\begin{tabular}{rr}
+Band & MHz\\ \hline 
+160m & 1.8025 \\  
+ 80m & 3.5815 \\
+ 40m & 7.0475 \\
+ 20m & 14.0475 \\
+ 17m & 18.0975 \\
+ 15m & 21.0675 \\
+ 10m & 28.0675 \\
+\end{tabular}
+\vspace{\baselineskip}
+
+\href{http://www.arrl.org/w1aw-operating-schedule}{Scheduled operating times and code speed}
+
+\end{multicols}
+\end{document}
